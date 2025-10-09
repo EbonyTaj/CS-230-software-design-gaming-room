@@ -13,9 +13,6 @@ CS-230 design artifact for The Gaming Room—multi-platform architecture, securi
 - **Final design document (Project Three):**
   [CS 230 Project Three Software Design_EbAnderson.docx](artifacts/CS%20230%20Project%20Three%20Software%20Design_EbAnderson.docx)
 
-- **PDF (optional):**
-  [CS 230 Project Three Software Design_EbAnderson.pdf](artifacts/CS%20230%20Project%20Three%20Software%20Design_EbAnderson.pdf)
-
 - **Prior version (Project Two):**
   [CS 230 Project Two Software Design_EbAnderson.docx](artifacts/CS%20230%20Project%20Two%20Software%20Design_EbAnderson.docx)
 
@@ -23,14 +20,6 @@ CS-230 design artifact for The Gaming Room—multi-platform architecture, securi
   - [CS 230 Module Four Journal Software Application Requirements.docx](artifacts/CS%20230%20Module%20Four%20Journal%20Software%20Application%20Requirements.docx)
   - [CS230 Module Six Memory and Storage Management_EbAnderson.docx](artifacts/CS230%20Module%20Six%20Memory%20and%20Storage%20Management_EbAnderson.docx)
   - [Revision_CS230 Module Six Memory and Storage Management_EbAnderson.docx](artifacts/Revision_CS230%20Module%20Six%20Memory%20and%20Storage%20Management_EbAnderson.docx)
-
-## Diagrams
-See `artifacts/diagrams/` (stub included). Suggested files:
-- `architecture.png` — client → API → services → data
-- `request-flow.png` — connect → join → round (WebSocket) → scoring
-
-
-
 
 ---
 
@@ -124,7 +113,7 @@ Java 17 • Dropwizard/JAX-RS (Jersey) • DTOs (JSON) • WebSockets • Token/
 ---
 
 ## Submission (for LMS)
-- **Repository URL:** `https://github.com/<your-username>/cs230-software-design-gaming-room`
+- **Repository URL:** `https://github.com/EbonyTaj/cs230-software-design-gaming-room`
 - **Artifact path (in repo):** `artifacts/CS 230 Project Three Software Design_EbAnderson.docx`
 - **README:** This file includes the required journal reflection answering all prompt questions.
 
