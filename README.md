@@ -10,10 +10,13 @@ CS-230 design artifact for The Gaming Room—multi-platform architecture, securi
 
 ## Artifact
 
-- **Final design document (Project Three):**
+- **Final design document (Project Three — Revised):**  
+  [Revision_CS 230 Project Three Software Design_EbAnderson.pdf](artifacts/Revision_CS%20230%20Project%20Three%20Software%20Design_EbAnderson.pdf)
+
+- **Prior Project Three (original submission):**  
   [CS 230 Project Three Software Design_EbAnderson.pdf](artifacts/CS%20230%20Project%20Three%20Software%20Design_EbAnderson.pdf)
 
-- **Prior version (Project Two):**
+- **Prior version (Project Two):**  
   [CS 230 Project Two Software Design_EbAnderson.pdf](artifacts/CS%20230%20Project%20Two%20Software%20Design_EbAnderson.pdf)
 
 - **Related journals (optional for context):**
@@ -31,7 +34,7 @@ CS-230 design artifact for The Gaming Room—multi-platform architecture, securi
 
 ### 2) What I did particularly well
 - **Separation of concerns** across client, API, persistence, security, and deployment.
-- **Concrete platform trade-offs** (Linux/Mac/Windows/mobile) with a clear recommendation.
+- **Concrete platform trade-offs** (Linux/macOS/Windows/mobile) with a clear recommendation.
 - A **cross-platform test matrix** and **SLO footer** to make performance and reliability measurable.
 - **Idempotent** write operations + a consistent **error model** to simplify retries and clients.
 
@@ -40,18 +43,18 @@ Treating the doc as a **map** reduced rework. Endpoints, DTOs, auth roles (USER/
 
 ### 4) What I would revise and how
 I’d deepen the **capacity & cost model**:
-- Add load assumptions (CCU, RPS, cache hit ratios) and perf budgets per endpoint/socket event.
+- Add load assumptions (concurrent users, requests per second, cache hit ratios) and performance budgets per endpoint/socket event.
 - Include a minimal **k6/Locust** script and a short **Runbook** (alerts, on-call, rollback) to tighten operability.
 
 ### 5) Interpreting user needs & why it matters
 User goals—**fast rounds**, **fair play**, **no duplicate names**, **access anywhere**—became **design choices**:
 - Server-authoritative timing; **WebSockets** for round updates; image fully revealed at **t = 30s** in each 60s round.
-- API + DB enforce uniqueness; single active game per team.
+- API + database enforce uniqueness; single active game per team.
 - **Web client** for broad reach with mobile parity. Centering users preserves trust and retention.
 
 ### 6) My design approach & future techniques
 - **Feynman pass:** explain simply (who talks to whom, why).
-- **Quality gates early:** SLOs, authN/authZ, error schema, test matrix before coding.
+- **Quality gates early:** SLOs, authentication/authorization, error schema, test matrix before coding.
 - **Traceability:** requirement → design choice → test.
 - **Operate what you build:** health checks, logs/metrics, deploy/rollback paths.  
 **Next time:** start with a **walking skeleton**, attach **performance budgets**, iterate with **measurements**.
@@ -87,7 +90,7 @@ This keeps 60-FPS feel while the library scales (~200 HD images ≈ 1.6–2.0 GB
 
 ## Recommendation Snapshot (what I’d ship)
 - **Host on Linux (Ubuntu LTS)** for cost, maturity, and container ecosystem; Windows Server only if AD/.NET requires it.  
-- **Three-tier, stateless web:** CDN/WAF → ingress/LB → app pods → PostgreSQL + Redis + object storage.  
+- **Three-tier, stateless web:** CDN/WAF → ingress/load balancer → app pods → PostgreSQL + Redis + object storage.  
 - **Security:** HTTPS, OAuth2/OIDC, short-lived JWTs, CSRF/CORS, secrets vault, scans, WAF/rate limiting, SIEM alerts.  
 - **Distributed:** WebSockets primary; SSE/polling fallback; idempotent APIs; retries with backoff; health checks & circuit breakers.
 
@@ -113,8 +116,6 @@ Java 17 • Dropwizard/JAX-RS (Jersey) • DTOs (JSON) • WebSockets • Token/
 ---
 
 ## Submission (for LMS)
-- **Repository URL:** `https://github.com/EbonyTaj/cs230-software-design-gaming-room`
-- **Artifact path (in repo):** `artifacts/CS 230 Project Three Software Design_EbAnderson.pdf`
+- **Repository URL:** `https://github.com/EbonyTaj/cs230-software-design-gaming-room`  
+- **Artifact path (in repo):** `artifacts/Revision_CS 230 Project Three Software Design_EbAnderson.pdf` (revised) and `artifacts/CS 230 Project Three Software Design_EbAnderson.pdf` (original)  
 - **README:** This file includes the required journal reflection answering all prompt questions.
-
-
